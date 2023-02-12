@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://headPart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Snake.gd" type="Script" id=2]
+
+[node name="Snake" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="EatFoodSound" type="AudioStreamPlayer" parent="."]
+
+[node name="headPart" parent="." instance=ExtResource( 1 )]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
