@@ -7,8 +7,8 @@ extents = Vector2( 16, 16 )
 
 [node name="headPart" instance=ExtResource( 1 )]
 
-[node name="Area2D" type="Area2D" parent="." index="1"]
+[node name="SnakeArea2D" type="Area2D" parent="." index="1"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SnakeArea2D" index="0"]
 position = Vector2( 16, 16 )
 shape = SubResource( 1 )

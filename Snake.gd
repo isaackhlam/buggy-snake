@@ -1,6 +1,5 @@
 extends Node2D
 
-
 var bodyPart = preload("res://bodyPart.tscn")
 onready var head = get_node("headPart")
 var direction = Vector2(0, 1);
@@ -20,7 +19,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("ui_down"):
 		direction = Vector2(0, 1);
 	if Input.is_action_just_pressed("ui_up"):
@@ -49,13 +48,13 @@ func check_bounds():
 	var grid_size = Globals.grid_size;
 	
 	if head_pos.x >= grid_size.x * cell_size:
-		segments[0].global_postion.x = 0;
+		segments[0].global_position.x = 0;
 	if head_pos.x < 0:
-		segments[0].global_postion.x = (grid_size.x - 1) * cell_size;
+		segments[0].global_position.x = (grid_size.x - 1) * cell_size;
 	if head_pos.x >= grid_size.y * cell_size:
-		segments[0].global_postion.y = 0;
+		segments[0].global_position.y = 0;
 	if head_pos.y < 0:
-		segments[0].global_postion.y = (grid_size.y - 1) * cell_size;
+		segments[0].global_position.y = (grid_size.y - 1) * cell_size;
 
 func check_game_over():
 	for i in range(1, segments.size(), 1):

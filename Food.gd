@@ -18,6 +18,7 @@ func _ready():
 
 func _on_Area2D_area_entered(area):
 	pass # Replace with function body.
+	print(area.get_name())
 	if area.name == "SnakeArea2D":
 		Globals.eat_food()
 		queue_free();
